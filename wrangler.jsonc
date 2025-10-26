@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "skland-daily-checkin",
+  "compatibility_date": "2025-04-04",
+  "main": "./src/worker.ts",
+  "observability": {
+    "enabled": true
+  },
+  "triggers": {
+    "crons": [
+      "30 0/2 * * *"
+    ]
+  },
+  "kv_namespaces": [
+    {
+      "binding": "SKLAND_DAILY_ATTENDANCE_STORAGE",
+      "id": "aa4b0de0c854408f9157a630fade80c7"
+    }
+  ]
+}
